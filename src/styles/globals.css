@@ -22,4 +22,21 @@ body {
   html {
     scroll-behavior: smooth;
   }
+
+  h1 {
+    @apply text-xl font-bold text-gray-900 md:text-2xl xl:text-3xl;
+    line-height: 5rem;
+  }
+}
+
+.submit-button {
+  @apply min-h-[50px] rounded-md bg-dark-deep text-base font-bold text-white hover:bg-[#353B50] hover:text-white;
+}
+
+.input {
+  @apply w-full rounded-r-md border border-slate-200 px-3 py-2 focus:border-dark/20 focus:outline-none focus:ring-1 focus:ring-dark/20;
+}
+
+.card {
+  @apply w-full max-w-md rounded-2xl bg-white p-6 shadow-card;
 }
