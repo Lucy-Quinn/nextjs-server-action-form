@@ -30,11 +30,11 @@ body {
 }
 
 .submit-button {
-  @apply bg-dark-deep hover:text-dark-deep min-h-[50px] rounded-md text-base font-bold text-white hover:bg-white;
+  @apply min-h-[50px] rounded-md bg-dark-deep text-base font-bold text-white hover:bg-[#353B50] hover:text-white;
 }
 
 .input {
-  @apply focus:border-dark/20 focus:ring-dark/20 w-full rounded-r-md border border-slate-200 px-3 py-2 focus:outline-none focus:ring-1;
+  @apply w-full rounded-r-md border border-slate-200 px-3 py-2 focus:border-dark/20 focus:outline-none focus:ring-1 focus:ring-dark/20;
 }
 
 .card {

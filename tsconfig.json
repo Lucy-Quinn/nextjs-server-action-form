@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -27,23 +23,14 @@
       }
     ],
     "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/lib/*": [
-        "lib/*"
-      ]
+      "@/components/*": ["components/*"],
+      "@/lib/*": ["lib/*"],
+      "@/app/actions/*": ["app/actions/*"],
+      "@/types/*": ["types/*"],
+      "@/constants/*": ["constants/*"]
     },
     "target": "ES2017"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "tailwind.config.js",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
