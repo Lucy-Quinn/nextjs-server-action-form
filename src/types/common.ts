@@ -1,20 +1,12 @@
-type BasicFormFields = {
-  name?: string[]
-  email?: string[]
-  feedbackType?: string[]
-  comment?: string[]
-}
-
-type ActionResponse<T extends Record<string, string[]>> = {
+export type ActionResponse<T extends Record<string, string[]>> = {
   success: boolean
   message?: string
   error?: T
   payload?: FormData
 }
 
-export type BasicFormResponse = ActionResponse<BasicFormFields>
-
-export type BasicFormField = {
+export type FormField = {
+  //FormFieldDefinition
   label: string
   name: string
   type: FieldType
@@ -26,4 +18,5 @@ export enum FieldType {
   SELECT = 'select',
   INPUT = 'text',
   TEXTAREA = 'textarea',
+  DATE = 'date',
 }

@@ -1,17 +1,17 @@
 'use server'
 
-import { basicFormSchema } from '@/lib/schemas/basic'
-import { BasicFormResponse } from '@/types/forms/basic'
+import { reactHookFormSchema } from '@/lib/schemas/reactHookForm'
+import { ReactHookFormResponse } from '@/types/forms'
 
-export async function submitBasicForm(
+export async function submitReactHookForm(
   _: unknown,
   formData: FormData,
-): Promise<BasicFormResponse> {
-  const validatedFields = basicFormSchema.safeParse({
+): Promise<ReactHookFormResponse> {
+  const validatedFields = reactHookFormSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
-    feedbackType: formData.get('feedbackType'),
-    comment: formData.get('comment'),
+    shoppingPreference: formData.get('shoppingPreference'),
+    dateOfBirth: formData.get('dateOfBirth'),
   })
 
   if (!validatedFields.success) {

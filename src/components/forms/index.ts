@@ -1,2 +1,2 @@
-export * from './FormFields'
+export * from './shared/FormFields'
 export * from './SubmitButton'
