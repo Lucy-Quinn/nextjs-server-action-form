@@ -1,8 +1,8 @@
 'use client'
+import { FormFields } from '@/components/forms/shared/FormFields'
+import { SubmitButton } from '@/components/forms/shared/SubmitButton'
 import { BASIC_FORM_FIELDS, FEEDBACK_TYPE_OPTIONS_VALUES } from '@/constants/basic'
 import { FieldType } from '@/types/common'
-import { FormFields } from '../shared/FormFields'
-import { SubmitButton } from '../SubmitButton'
 
 import { submitBasicForm } from '@/app/actions/basic'
 import { useActionState } from 'react'

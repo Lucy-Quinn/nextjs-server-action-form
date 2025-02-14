@@ -1,4 +1,6 @@
 import { submitReactHookForm } from '@/app/actions/reactHookForm'
+import { FormFields } from '@/components/forms/shared/FormFields'
+import { SubmitButton } from '@/components/forms/shared/SubmitButton'
 import {
   REACT_HOOK_FORM_FIELDS,
   SHOPPING_PREFERENCE_OPTIONS_VALUES,
@@ -7,8 +9,6 @@ import { FieldType } from '@/types/common'
 import { ReactHookFormFields } from '@/types/forms/reactHookForm'
 import { startTransition, useActionState } from 'react'
 import { useForm } from 'react-hook-form'
-import { FormFields } from '../shared/FormFields'
-import { SubmitButton } from '../SubmitButton'
 
 export const ReactHookFormContent = () => {
   const [state, formAction] = useActionState(submitReactHookForm, null)
@@ -22,6 +22,7 @@ export const ReactHookFormContent = () => {
       dateOfBirth: '',
     },
   })
+
   const onSubmit = (data: ReactHookFormFields) => {
     startTransition(() => {
       const formData = new FormData()
@@ -35,7 +36,7 @@ export const ReactHookFormContent = () => {
   return (
     <main className="flex min-h-screen items-center justify-center p-4">
       <div className="card">
-        <h1 className="mb-6 text-center text-2xl font-bold">Basic Form</h1>
+        <h1 className="mb-6 text-center text-2xl font-bold">React Hook Form</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-3">
           {REACT_HOOK_FORM_FIELDS.map((field) => (
             <FormFields

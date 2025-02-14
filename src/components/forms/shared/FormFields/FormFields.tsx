@@ -5,7 +5,7 @@ import { renderInputFields } from './renderInputFields'
 
 interface FormFieldsProps {
   field: FormField
-  value?: string
+  value: string
   error?: string[]
   options?: Record<string, string>
   showLabel?: boolean
@@ -31,7 +31,7 @@ export const FormFields = ({
         <span aria-hidden="true">*</span>
       </div>
 
-      {renderInputFields(field, value, options, control, register)}
+      {renderInputFields({ field, value, options, control, register })}
       {Boolean(error) && <p className="text-red-500">{error}</p>}
     </>
   )
