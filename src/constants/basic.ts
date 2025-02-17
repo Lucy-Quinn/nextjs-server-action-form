@@ -1,6 +1,6 @@
-import { BasicFormField, FieldType } from '@/types/basic'
+import { FieldType, FormField } from '@/types/common'
 
-export const BASIC_FORM_FIELDS: BasicFormField[] = [
+export const BASIC_FORM_FIELDS: FormField[] = [
   {
     label: 'Name',
     name: 'name',
@@ -25,6 +25,7 @@ export const BASIC_FORM_FIELDS: BasicFormField[] = [
     label: 'Feedback Type',
     name: 'feedbackType',
     type: FieldType.SELECT,
+    placeholder: 'Select a type',
   },
   {
     label: 'Comment',

@@ -1,9 +1,12 @@
 'use server'
 
 import { basicFormSchema } from '@/lib/schemas/basic'
-import { BasicFormResponse } from '@/types/basic'
+import { BasicFormResponse } from '@/types/forms/basic'
 
-export async function submitBasicForm(_: unknown, formData: FormData): Promise<BasicFormResponse> {
+export async function submitBasicForm(
+  _: unknown,
+  formData: FormData,
+): Promise<BasicFormResponse> {
   const validatedFields = basicFormSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
