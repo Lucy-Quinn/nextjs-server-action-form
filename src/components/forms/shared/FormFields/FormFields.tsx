@@ -3,17 +3,17 @@ import clsx from 'clsx'
 import { Control, FieldValues, UseFormRegister } from 'react-hook-form'
 import { renderInputFields } from './renderInputFields'
 
-interface FormFieldsProps {
+interface FormFieldsProps<T extends FieldValues> {
   field: FormField
-  value: string
-  error?: string[]
+  value?: string
+  error?: string
   options?: Record<string, string>
   showLabel?: boolean
-  control?: Control<FieldValues>
-  register?: UseFormRegister<FieldValues>
+  control?: Control<T>
+  register?: UseFormRegister<T>
 }
 
-export const FormFields = ({
+export const FormFields = <T extends FieldValues>({
   field,
   value = '',
   error,
@@ -21,7 +21,7 @@ export const FormFields = ({
   showLabel = false,
   control,
   register,
-}: FormFieldsProps) => {
+}: FormFieldsProps<T>) => {
   return (
     <>
       <div className={clsx('flex gap-1', !showLabel && 'sr-only')}>

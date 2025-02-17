@@ -32,4 +32,4 @@ export const SHOPPING_PREFERENCE_OPTIONS_VALUES = {
   running: 'Running',
   training: 'Training',
   fashion: 'Fashion',
-}
+} as const

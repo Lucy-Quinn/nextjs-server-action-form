@@ -1,9 +1,9 @@
+import { FEEDBACK_TYPE_OPTIONS_VALUES } from '@/constants/basic'
 import { ActionResponse } from '@/types/common'
-
 export type BasicFormValues = {
   name?: string
   email?: string
-  feedbackType?: string
+  feedbackType?: typeof FEEDBACK_TYPE_OPTIONS_VALUES
   comment?: string
 }
 

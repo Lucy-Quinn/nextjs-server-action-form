@@ -1,4 +1,4 @@
-export type ActionResponse<T extends Record<string, string[]>> = {
+export type ActionResponse<T extends Record<string, string | string[]>> = {
   success: boolean
   message?: string
   error?: T
@@ -6,7 +6,6 @@ export type ActionResponse<T extends Record<string, string[]>> = {
 }
 
 export type FormField = {
-  //FormFieldDefinition
   label: string
   name: string
   type: FieldType

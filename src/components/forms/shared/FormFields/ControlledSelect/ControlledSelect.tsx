@@ -1,19 +1,22 @@
 import { FormField } from '@/types/common'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
-import { Control, Controller, FieldValues } from 'react-hook-form'
+import { Control, Controller, FieldValues, Path } from 'react-hook-form'
 
-interface ControlledSelectProps {
-  control: Control<FieldValues>
+interface ControlledSelectProps<T extends FieldValues> {
+  control: Control<T>
   field: FormField
   options: Record<string, string>
 }
 
-export const ControlledSelect = ({ control, field, options }: ControlledSelectProps) => {
-  const { name, placeholder } = field
+export const ControlledSelect = <T extends FieldValues>({
+  control,
+  field: { name, placeholder },
+  options,
+}: ControlledSelectProps<T>) => {
   return (
-    <Controller
+    <Controller<T>
       control={control}
-      name={name}
+      name={name as Path<T>}
       render={({ field }) => (
         <Listbox value={field.value} onChange={field.onChange}>
           <div className="relative">

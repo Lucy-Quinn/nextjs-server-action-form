@@ -20,7 +20,7 @@ export const BasicFormContent = () => {
               key={field.name}
               field={field}
               value={payload?.get(field.name) as string}
-              error={error?.[field.name as keyof typeof error]}
+              error={error?.[field.name as keyof typeof error]?.[0]}
               options={
                 field.type === FieldType.SELECT ? FEEDBACK_TYPE_OPTIONS_VALUES : undefined
               }
